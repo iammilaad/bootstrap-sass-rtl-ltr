@@ -14,23 +14,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    cssmin: {
-      options: {
-        compatibility: 'ie8',
-        keepSpecialComments: 0,
-        sourceMap: false,
-        advanced: false
-      },
-      target: {
-        files: [{
-          expand: true,
-          cwd: 'css/*.css',
-          src: ['css/*.css'],
-          dest: 'dist/style.min.css',
-          ext: '.min.css'
-        }]
-      }
-    },
     uglify: {
       options: {
         mangle: false,
@@ -61,8 +44,7 @@ module.exports = function(grunt) {
     },
   });
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['sass','uglify' , 'cssmin']);
+  grunt.registerTask('default', ['sass','uglify']);
 };

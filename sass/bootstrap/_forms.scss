@@ -231,6 +231,7 @@ input[type="search"] {
   label {
     min-height: $line-height-computed; // Ensure the input doesn't jump when there is no text
     padding-#{$dir-mode-align}: 20px;
+    padding-#{$dir-mode-align-inverse}: 0;
     margin-bottom: 0;
     font-weight: normal;
     cursor: pointer;
@@ -398,7 +399,7 @@ input[type="checkbox"] {
 .form-control-feedback {
   position: absolute;
   top: 0;
-  right: 0;
+  #{$dir-mode-align-inverse}: 0;
   z-index: 2; // Ensure icon is above input groups
   display: block;
   width: $input-height-base;
@@ -591,7 +592,7 @@ input[type="checkbox"] {
   // Reposition the icon because it's now within a grid column and columns have
   // `position: relative;` on them. Also accounts for the grid gutter padding.
   .has-feedback .form-control-feedback {
-    right: floor(($grid-gutter-width / 2));
+    #{$dir-mode-align-inverse}: floor(($grid-gutter-width / 2));
   }
 
   // Form group sizes

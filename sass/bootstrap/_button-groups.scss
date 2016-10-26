@@ -214,7 +214,7 @@
   }
 
   > .btn-group .dropdown-menu {
-    left: auto;
+    #{$dir-mode-align}: auto;
   }
 }
 

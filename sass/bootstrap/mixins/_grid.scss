@@ -31,10 +31,10 @@
   margin-#{$dir-mode-align}: percentage(($columns / $grid-columns));
 }
 @mixin make-xs-column-push($columns) {
-  left: percentage(($columns / $grid-columns));
+  #{$dir-mode-align}: percentage(($columns / $grid-columns));
 }
 @mixin make-xs-column-pull($columns) {
-  right: percentage(($columns / $grid-columns));
+  #{$dir-mode-align-inverse}: percentage(($columns / $grid-columns));
 }
 
 // Generate the small columns
@@ -56,12 +56,12 @@
 }
 @mixin make-sm-column-push($columns) {
   @media (min-width: $screen-sm-min) {
-    left: percentage(($columns / $grid-columns));
+    #{$dir-mode-align}: percentage(($columns / $grid-columns));
   }
 }
 @mixin make-sm-column-pull($columns) {
   @media (min-width: $screen-sm-min) {
-    right: percentage(($columns / $grid-columns));
+    #{$dir-mode-align-inverse}: percentage(($columns / $grid-columns));
   }
 }
 
@@ -84,12 +84,12 @@
 }
 @mixin make-md-column-push($columns) {
   @media (min-width: $screen-md-min) {
-    left: percentage(($columns / $grid-columns));
+    #{$dir-mode-align}: percentage(($columns / $grid-columns));
   }
 }
 @mixin make-md-column-pull($columns) {
   @media (min-width: $screen-md-min) {
-    right: percentage(($columns / $grid-columns));
+    #{$dir-mode-align-inverse}: percentage(($columns / $grid-columns));
   }
 }
 
@@ -112,11 +112,11 @@
 }
 @mixin make-lg-column-push($columns) {
   @media (min-width: $screen-lg-min) {
-    left: percentage(($columns / $grid-columns));
+    #{$dir-mode-align}: percentage(($columns / $grid-columns));
   }
 }
 @mixin make-lg-column-pull($columns) {
   @media (min-width: $screen-lg-min) {
-    right: percentage(($columns / $grid-columns));
+    #{$dir-mode-align-inverse}: percentage(($columns / $grid-columns));
   }
 }

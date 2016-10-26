@@ -138,8 +138,8 @@
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
-  right: 0;
-  left: 0;
+  #{$dir-mode-align-inverse}: 0;
+  #{$dir-mode-align}: 0;
   z-index: $zindex-navbar-fixed;
 
   // Undo the rounded corners

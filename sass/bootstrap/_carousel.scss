@@ -34,18 +34,18 @@
       &.next,
       &.active.right {
         @include translate3d(100%, 0, 0);
-        left: 0;
+        #{$dir-mode-align}: 0;
       }
       &.prev,
       &.active.left {
         @include translate3d(-100%, 0, 0);
-        left: 0;
+        #{$dir-mode-align}: 0;
       }
       &.next.left,
       &.prev.right,
       &.active {
         @include translate3d(0, 0, 0);
-        left: 0;
+        #{$dir-mode-align}: 0;
       }
     }
   }
@@ -57,7 +57,7 @@
   }
 
   > .active {
-    left: 0;
+    #{$dir-mode-align}: 0;
   }
 
   > .next,
@@ -68,21 +68,21 @@
   }
 
   > .next {
-    left: 100%;
+    #{$dir-mode-align}: 100%;
   }
   > .prev {
-    left: -100%;
+    #{$dir-mode-align}: -100%;
   }
   > .next.left,
   > .prev.right {
-    left: 0;
+    #{$dir-mode-align}: 0;
   }
 
   > .active.left {
-    left: -100%;
+    #{$dir-mode-align}: -100%;
   }
   > .active.right {
-    left: 100%;
+    #{$dir-mode-align}: 100%;
   }
 
 }
@@ -93,7 +93,7 @@
 .carousel-control {
   position: absolute;
   top: 0;
-  left: 0;
+  #{$dir-mode-align}: 0;
   bottom: 0;
   width: $carousel-control-width;
   @include opacity($carousel-control-opacity);
@@ -110,8 +110,8 @@
     @include gradient-horizontal($start-color: rgba(0,0,0,.5), $end-color: rgba(0,0,0,.0001));
   }
   &.right {
-    left: auto;
-    right: 0;
+    #{$dir-mode-align}: auto;
+    #{$dir-mode-align-inverse}: 0;
     @include gradient-horizontal($start-color: rgba(0,0,0,.0001), $end-color: rgba(0,0,0,.5));
   }
 
@@ -137,12 +137,12 @@
   }
   .icon-prev,
   .glyphicon-chevron-left {
-    left: 50%;
+    #{$dir-mode-align}: 50%;
     margin-#{$dir-mode-align}: -10px;
   }
   .icon-next,
   .glyphicon-chevron-right {
-    right: 50%;
+    #{$dir-mode-align-inverse}: 50%;
     margin-#{$dir-mode-align-inverse}: -10px;
   }
   .icon-prev,
@@ -174,7 +174,7 @@
 .carousel-indicators {
   position: absolute;
   bottom: 10px;
-  left: 50%;
+  #{$dir-mode-align}: 50%;
   z-index: 15;
   width: 60%;
   margin-#{$dir-mode-align}: -30%;
@@ -217,8 +217,8 @@
 // Hidden by default for smaller viewports
 .carousel-caption {
   position: absolute;
-  left: 15%;
-  right: 15%;
+  #{$dir-mode-align}: 15%;
+  #{$dir-mode-align-inverse}: 15%;
   bottom: 20px;
   z-index: 10;
   padding-top: 20px;
@@ -258,8 +258,8 @@
 
   // Show and left align the captions
   .carousel-caption {
-    left: 20%;
-    right: 20%;
+    #{$dir-mode-align}: 20%;
+    #{$dir-mode-align-inverse}: 20%;
     padding-bottom: 30px;
   }
 

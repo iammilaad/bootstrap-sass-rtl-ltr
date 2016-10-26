@@ -170,7 +170,7 @@
 
   > .dropdown .dropdown-menu {
     top: auto;
-    left: auto;
+    #{$dir-mode-align}: auto;
   }
 
   @media (min-width: $screen-sm-min) {

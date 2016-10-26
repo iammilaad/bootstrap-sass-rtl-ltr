@@ -38,22 +38,22 @@
   }
   @if ($type == push) and ($index > 0) {
     .col-#{$class}-push-#{$index} {
-      left: percentage(($index / $grid-columns));
+      #{$dir-mode-align}: percentage(($index / $grid-columns));
     }
   }
   @if ($type == push) and ($index == 0) {
     .col-#{$class}-push-0 {
-      left: auto;
+      #{$dir-mode-align}: auto;
     }
   }
   @if ($type == pull) and ($index > 0) {
     .col-#{$class}-pull-#{$index} {
-      right: percentage(($index / $grid-columns));
+      #{$dir-mode-align-inverse}: percentage(($index / $grid-columns));
     }
   }
   @if ($type == pull) and ($index == 0) {
     .col-#{$class}-pull-0 {
-      right: auto;
+      #{$dir-mode-align-inverse}: auto;
     }
   }
   @if ($type == offset) {

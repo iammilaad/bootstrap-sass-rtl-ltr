@@ -18,9 +18,9 @@
   overflow: hidden;
   position: fixed;
   top: 0;
-  right: 0;
+  #{$dir-mode-align-inverse}: 0;
   bottom: 0;
-  left: 0;
+  #{$dir-mode-align}: 0;
   z-index: $zindex-modal;
   -webkit-overflow-scrolling: touch;
 
@@ -64,9 +64,9 @@
 .modal-backdrop {
   position: fixed;
   top: 0;
-  right: 0;
+  #{$dir-mode-align-inverse}: 0;
   bottom: 0;
-  left: 0;
+  #{$dir-mode-align}: 0;
   z-index: $zindex-modal-background;
   background-color: $modal-backdrop-bg;
   // Fade for backdrop

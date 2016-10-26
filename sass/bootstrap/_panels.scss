@@ -147,16 +147,16 @@
     > tbody:last-child,
     > tfoot:last-child {
       > tr:last-child {
-        border-bottom-left-radius: ($panel-border-radius - 1);
-        border-bottom-right-radius: ($panel-border-radius - 1);
+        border-bottom-#{$dir-mode-align}-radius: ($panel-border-radius - 1);
+        border-bottom-#{$dir-mode-align-inverse}-radius: ($panel-border-radius - 1);
 
         td:first-child,
         th:first-child {
-          border-bottom-left-radius: ($panel-border-radius - 1);
+          border-bottom-#{$dir-mode-align}-radius: ($panel-border-radius - 1);
         }
         td:last-child,
         th:last-child {
-          border-bottom-right-radius: ($panel-border-radius - 1);
+          border-bottom-#{$dir-mode-align-inverse}-radius: ($panel-border-radius - 1);
         }
       }
     }
@@ -180,11 +180,11 @@
       > tr {
         > th:first-child,
         > td:first-child {
-          border-left: 0;
+          border-#{$dir-mode-align}: 0;
         }
         > th:last-child,
         > td:last-child {
-          border-right: 0;
+          border-#{$dir-mode-align-inverse}: 0;
         }
       }
     }

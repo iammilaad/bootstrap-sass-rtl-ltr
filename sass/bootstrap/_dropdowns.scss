@@ -12,8 +12,8 @@
   vertical-align: middle;
   border-top:   $caret-width-base dashed;
   border-top:   $caret-width-base solid \9; // IE8
-  border-right: $caret-width-base solid transparent;
-  border-left:  $caret-width-base solid transparent;
+  border-#{$dir-mode-align-inverse}: $caret-width-base solid transparent;
+  border-#{$dir-mode-align}:  $caret-width-base solid transparent;
 }
 
 // The dropdown wrapper (div)
@@ -31,7 +31,7 @@
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 0#{'/*rtl:auto*/'};
+  #{$dir-mode-align}: 0#{'/*rtl:auto*/'};
   z-index: $zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
   float: $dir-mode-align;
@@ -52,8 +52,8 @@
   //
   // Deprecated as of 3.1.0 in favor of `.dropdown-menu-[dir]`
   &.pull-right {
-    right: 0;
-    left: auto;
+    #{$dir-mode-align-inverse}: 0;
+    #{$dir-mode-align}: auto;
   }
 
   // Dividers (basically an hr) within the dropdown
@@ -135,8 +135,8 @@
 // Add extra class to `.dropdown-menu` to flip the alignment of the dropdown
 // menu with the parent.
 .dropdown-menu-right {
-  left: auto; // Reset the default from `.dropdown-menu`
-  right: 0;
+  #{$dir-mode-align}: auto; // Reset the default from `.dropdown-menu`
+  #{$dir-mode-align-inverse}: 0;
 }
 // With v3, we enabled auto-flipping if you have a dropdown within a right
 // aligned nav component. To enable the undoing of that, we provide an override
@@ -145,8 +145,8 @@
 // This is only for left-aligning a dropdown menu within a `.navbar-right` or
 // `.pull-right` nav component.
 .dropdown-menu-left {
-  left: 0;
-  right: auto;
+  #{$dir-mode-align}: 0;
+  #{$dir-mode-align-inverse}: auto;
 }
 
 // Dropdown section headers
@@ -162,8 +162,8 @@
 // Backdrop to catch body clicks on mobile, etc.
 .dropdown-backdrop {
   position: fixed;
-  left: 0;
-  right: 0;
+  #{$dir-mode-align}: 0;
+  #{$dir-mode-align-inverse}: 0;
   bottom: 0;
   top: 0;
   z-index: ($zindex-dropdown - 10);
@@ -171,8 +171,8 @@
 
 // Right aligned dropdowns
 .pull-right > .dropdown-menu {
-  right: 0;
-  left: auto;
+  #{$dir-mode-align-inverse}: 0;
+  #{$dir-mode-align}: auto;
 }
 
 // Allow for dropdowns to go bottom up (aka, dropup-menu)
@@ -205,12 +205,12 @@
 @media (min-width: $grid-float-breakpoint) {
   .navbar-right {
     .dropdown-menu {
-      right: 0; left: auto;
+      #{$dir-mode-align-inverse}: 0; #{$dir-mode-align}: auto;
     }
     // Necessary for overrides of the default right aligned menu.
     // Will remove come v4 in all likelihood.
     .dropdown-menu-left {
-      left: 0; right: auto;
+      #{$dir-mode-align}: 0; #{$dir-mode-align-inverse}: auto;
     }
   }
 }

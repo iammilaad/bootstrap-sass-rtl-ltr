@@ -115,7 +115,7 @@
   @include border-right-radius(0);
 }
 .input-group-addon:first-child {
-  border-right: 0;
+  border-#{$dir-mode-align-inverse}: 0;
 }
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
@@ -127,7 +127,7 @@
   @include border-left-radius(0);
 }
 .input-group-addon:last-child {
-  border-left: 0;
+  border-#{$dir-mode-align}: 0;
 }
 
 // Button input groups
